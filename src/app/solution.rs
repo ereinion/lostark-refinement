@@ -230,8 +230,8 @@ impl Solution {
         let mut counts = counts.into_iter().collect::<Vec<_>>();
         counts.sort_unstable_by_key(|(_result, count)| *count);
 
-        let mut most_likely = Vec::with_capacity(1000);
-        for (result, count) in counts.into_iter().rev().take(1000) {
+        let mut most_likely = Vec::with_capacity(5);
+        for (result, count) in counts.into_iter().rev().take(5) {
             let score = self.eval_result(result);
             most_likely.push(SimResult {
                 counts: result,
